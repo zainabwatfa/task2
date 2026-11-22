@@ -1,4 +1,5 @@
 import { delay } from '../utils/delay.js';
+import { NotFoundError } from '../utils/errors.js';
 import { users } from './users.data.js';
 import type { User } from './users.types.js';
 
@@ -11,7 +12,13 @@ export async function getAllUsers(): Promise<User[]> {
   return [...users];
 }
 
-export async function getUserById(id: number): Promise<User | undefined> {
+// Rejects with NotFoundError when no user has this id.
+export async function getUserById(id: number): Promise<User> {
   await delay(DB_DELAY_MS);
-  return users.find((user) => user.id === id);
+
+  const user = users.find((item) => item.id === id);
+  if (!user) {
+    throw new NotFoundError(`User #${id} was not found`);
+  }
+  return user;
 }
