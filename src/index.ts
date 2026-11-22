@@ -1,3 +1,8 @@
-const projectName: string = 'task2';
+import { tasks } from './tasks/tasks.data.js';
+import { users } from './users/users.data.js';
 
-console.log(`${projectName} is running with TypeScript and ESM`);
+console.log('Users:');
+console.table(users);
+
+console.log('Tasks:');
+console.table(tasks);
