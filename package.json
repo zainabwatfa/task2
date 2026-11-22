@@ -1,0 +1,19 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "description": "Node.js backend with TypeScript and ESM: async task operations for Tasks and Users",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainabwatfa/task2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
